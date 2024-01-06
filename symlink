@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+src_dir="$HOME/.config/"
+config_dir="$(cd "$(dirname "$0")/config" && pwd)"
+
+if [ ! -d "$config_dir" ]; then
+	echo "Local config directory not found: $config_dir"
+	exit 1
+fi
+
+
+find "$src_dir" -maxdepth 1 -type l | while read -r link; do
+	target_path=$(readlink "$link")
+	if [ ! -e "$link" ]; then
+		echo "Removing broken symlink: $link -> $target_path"
+		rm "$link"
+	fi
+done
+
+for folder in "$config_dir"/*/; do
+	[ -d "$folder" ] || continue
+	name="$(basename "$folder")"
+	target="$src_dir$name"
+	if [ -L "$target" ] || [ -d "$target" ]; then
+		rm -rf "$target"
+	fi
+	ln -s "$folder" "$target"
+	echo "Symlinked $folder -> $target"
+done
