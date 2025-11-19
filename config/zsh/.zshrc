@@ -1,7 +1,8 @@
-# ZSH_PLUGINS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
+ZSH_PLUGINS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 DISABLE_BELL=true
 setopt prompt_subst
 
+# History settings
 HISTFILE="${HISTFILE:-${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history}"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -11,13 +12,13 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_verify
 
-### directory navigation ###
-# setopt auto_cd
-# setopt auto_pushd
-# setopt pushd_ignore_dups
-# setopt pushd_silent
+# Directory navigation
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_silent
 
-# completion 
+# Completion settings
 setopt always_to_end
 setopt complete_in_word
 setopt menu_complete
@@ -35,6 +36,7 @@ if [[ -z "$LS_COLORS" ]]; then
 fi
 
 autoload -Uz compinit
+# Only check completion security once per day
 if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qNmh-24) ]]; then
   compinit -C
 else
@@ -48,11 +50,13 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' squeeze-slashes true
 
+# git prompt - optimized for speed
 function __git_prompt_git() {
   emulate -L zsh
   GIT_OPTIONAL_LOCKS=0 command git "$@"
 }
 
+# Ultra-fast git prompt - branch name only, no dirty check
 typeset -g _git_prompt_cache=""
 typeset -g _git_prompt_cache_dir=""
 
@@ -60,23 +64,28 @@ function git_prompt_info() {
   emulate -L zsh
   local current_dir="$PWD"
   
+  # Return cached value if still in same directory
   if [[ "$current_dir" == "$_git_prompt_cache_dir" && -n "$_git_prompt_cache" ]]; then
     print -n "$_git_prompt_cache"
     return 0
   fi
   
+  # Quick check if we're in a git repo
   local ref
   ref=$(__git_prompt_git symbolic-ref --short HEAD 2>/dev/null) || return 0
   
+  # Update cache
   _git_prompt_cache_dir="$current_dir"
   _git_prompt_cache="${ZSH_THEME_GIT_PROMPT_PREFIX}${ref:gs/%/%%}%{$fg[magenta]%})${ZSH_THEME_GIT_PROMPT_SUFFIX}"
   
   print -n "$_git_prompt_cache"
 }
 
+# Git prompt theme variables
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 
+# Clear git cache when changing directories
 function _git_prompt_chpwd() {
   emulate -L zsh
   _git_prompt_cache=""
@@ -85,15 +94,24 @@ function _git_prompt_chpwd() {
 autoload -U add-zsh-hook
 add-zsh-hook chpwd _git_prompt_chpwd
 
-PROMPT="%F{#adadd0}%1~%{$reset_color%} %(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})❯%{$reset_color%} "
+# prompt configuration
+PROMPT="%{$fg[cyan]%}%1~%{$reset_color%} %(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})❯%{$reset_color%} "
 PROMPT+='$(git_prompt_info)'
-RPROMPT='$(vi_mode_indicator)'
+
+# Better word deletion - stop at path separators
+autoload -Uz select-word-style
+select-word-style bash
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 bindkey '^p' up-line-or-history
 bindkey '^n' down-line-or-history
 bindkey '^r' history-incremental-search-backward
 
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# edit command line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 
 # source aliases
 function source_aliases() {
@@ -103,7 +121,7 @@ function source_aliases() {
 }
 source_aliases
 
-# whatever..................
+# extract various archive types
 function extract() {
   emulate -L zsh
   if [[ -z "$1" ]]; then
@@ -131,6 +149,7 @@ function extract() {
   fi
 }
 
+# Quick find
 function qfind() {
   emulate -L zsh
   if [[ -z "$1" ]]; then
@@ -140,34 +159,15 @@ function qfind() {
   find . -name "*$1*"
 }
 
-function zle-keymap-select() {
-  echo -ne '\e[1 q'
-  zle reset-prompt
-}
+# Vi-mode plugin
+[[ -f "$ZSH_PLUGINS_DIR/vi-mode/vi.zsh" ]] && source "$ZSH_PLUGINS_DIR/vi-mode/vi.zsh"
 
-function zle-line-init() {
-  echo -ne '\e[1 q'
-  zle reset-prompt
-}
-
-zle -N zle-keymap-select
-zle -N zle-line-init
-
-function vi_mode_indicator() {
-  if [[ ${KEYMAP} == vicmd ]]; then
-    echo -n "%{$fg_bold[red]%}<%{$reset_color%} "
-  fi
-}
-
-bindkey -v
-export KEYTIMEOUT=1
-
+# FZF Configuration
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
   source /usr/share/fzf/key-bindings.zsh
   bindkey '^r' fzf-history-widget
   bindkey -s '^F' 'tmux_sessionizer\n'
 fi
 
+# Bun completions
 [[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"
-# source "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 2>/dev/null
-

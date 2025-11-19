@@ -218,9 +218,9 @@ bar {
 
 
 exec --no-startup-id ~/.fehbg
-# exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --rate 144 --output HDMI-1-0 --mode 1920x1080 --rate 75 --right-of eDP-1
+exec --no-startup-id xrandr --output eDP-1 --primary --mode 1920x1080 --rate 144 --output HDMI-1-0 --mode 1920x1080 --rate 75 --right-of eDP-1
 # exec --no-startup-id setxkbmap -option caps:escape
-exec --no-startup-id picom
+exec_always --no-startup-id picom -b
 
 # keypress repeat rate
 exec_always --no-startup-id xset r rate 200 50
@@ -259,7 +259,7 @@ bindsym Shift+Print exec sh -c "maim -g 1920x1080+1920+0 ~/Pictures/Screenshots/
 # maim -g $MONITOR_INFO ~/Pictures/Screenshots/current_monitor/screenshot_$(date +%s).png | xclip -selection clipboard -t image/png"
 
 #dlinks
-bindsym Mod1+i exec --no-startup-id /home/bashneko/.local/scripts/dlinks
+bindsym Mod1+i exec --no-startup-id ~/.local/scripts/dlinks
 
 hide_edge_borders smart
 new_window none

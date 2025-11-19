@@ -1,4 +1,0 @@
-#vim
-[submodule "nvim"]
-	path = nvim
-	url = git@github.com:nhdfr/nvim.git
