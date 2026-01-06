@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+yay -S --noconfirm docker
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -aG docker "$USER"

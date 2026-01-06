@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+sudo yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji
+sudo yay -S ttf-liberation ttf-dejavu
+fc-cache -fv
