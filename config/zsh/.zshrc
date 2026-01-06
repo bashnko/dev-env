@@ -104,4 +104,4 @@ bindkey -M vicmd '^e' edit-command-line
 bindkey -M viins '^w' backward-kill-word
 
 source /usr/share/fzf/key-bindings.zsh
-bindkey -s '^F' 'tmux_sessionizer\n'
+bindkey -s '^F' 'muxify\n'
