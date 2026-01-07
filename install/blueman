@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+yay -S bluez bluez-utils
+# systemctl status bluetooth.service
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+# systemctl status bluetooth.service\n
+
