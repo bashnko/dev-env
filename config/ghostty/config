@@ -1,5 +1,5 @@
 theme = Rose Pine
-# Gruvbox Dark Hard
+# theme = Gruvbox Dark Hard
 # background = #282828
 background = #000000
 #window-padding-balance = false
@@ -14,7 +14,7 @@ gtk-titlebar = false
 window-padding-y = 0,0
 
 # window transparency
-# background-opacity = 0.9
+# background-opacity = 0.8
 
 clipboard-write = allow
 mouse-hide-while-typing = true
