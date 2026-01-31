@@ -1,2 +1,5 @@
-## ....
-soon after this doing some configs, I decided to move to nixOS. :(
+## Dev Env Setup
+these files and structure helps to setup a development environment quickly.
+`arch + i3wm`
+
+
