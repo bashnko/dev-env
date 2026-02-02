@@ -29,7 +29,7 @@
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
     time.timeZone = lib.mkForce "Asia/Kolkata";
-    i18n.defaultLocale = lib.mkForce "en_IN";
+    i18n.defaultLocale = lib.mkForce "en_US.UTF-8";
     i18n.extraLocaleSettings = lib.mkForce {
       LC_ADDRESS = "en_IN";
       LC_IDENTIFICATION = "en_IN";
@@ -41,6 +41,9 @@
       LC_TELEPHONE = "en_IN";
       LC_TIME = "en_IN";
     };
+    
+    # Ensure UTF-8 locale is generated
+    i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "en_IN/UTF-8" ];
 
     # Enable CUPS to print documents.
     services.printing.enable = true;

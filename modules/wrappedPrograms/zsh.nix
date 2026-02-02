@@ -10,9 +10,6 @@
   }: let
     lf = self'.packages.lf;
     zshrc = pkgs.writeText "zshrc" ''
-      eval "$(${lib.getExe pkgs.starship} init zsh)"
-      eval "$(${lib.getExe pkgs.zoxide} init zsh)"
-      
       if (( ''${+commands[direnv]} )); then
         eval "$(direnv hook zsh)"
       fi

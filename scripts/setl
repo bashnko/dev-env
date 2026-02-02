@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+alias_name="$1"
+shift
+command_name="$@"
+
+dir="$HOME/.config/zsh/aliases.zsh"
+
+echo "alias $alias_name=\"$command_name\"" >> "$dir"
+exec zsh

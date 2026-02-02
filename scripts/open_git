@@ -4,8 +4,6 @@ remote="origin"
 [[ "$1" == "-u" ]] && remote="upstream"
 
 url=$(git remote get-url "$remote" 2>/dev/null) || { 
-    echo "Error: No $remote remote found"
-    echo "Available remotes:"
     git remote -v
     exit 1
 }

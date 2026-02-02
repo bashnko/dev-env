@@ -30,6 +30,8 @@ in {
           allow_remote_control = "yes";
           shell_integration = "enabled";
 
+          term = "xterm-256color";
+          
 
           map = [
             "alt+1 goto_tab 1"

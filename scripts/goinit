@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+repo_name="$1"
+user="bashnko"
+go mod init github.com/"$user"/"$repo_name"

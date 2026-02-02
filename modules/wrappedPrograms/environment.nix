@@ -72,6 +72,9 @@
         GIT_AUTHOR_EMAIL = "thestraybyte@gmail.com";
         GIT_COMMITTER_NAME = "bashneko";
         GIT_COMMITTER_EMAIL = "thestraybyte@gmail.com";
+
+        # dir paths
+        PATH = "$HOME/dev-env/scripts:$PATH";
       };
     };
   };
