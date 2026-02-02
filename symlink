@@ -3,7 +3,7 @@
 src_dir="$HOME/.config/"
 config_dir="$(cd "$(dirname "$0")/config" && pwd)"
 
-script_dir="$HOME/.local/scripts/"
+script_dir="$HOME/dev-env/scripts/"
 mkdir -p "$script_dir"
 
 

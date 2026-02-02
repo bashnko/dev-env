@@ -1,0 +1,125 @@
+{
+  inputs,
+  self,
+  ...
+}: {
+  flake.nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.hostNixos
+    ];
+  };
+
+  flake.nixosModules.hostNixos = {pkgs, lib, ...}: {
+    imports = [
+      self.nixosModules.base
+      self.nixosModules.general
+      self.nixosModules.desktop 
+      
+      self.nixosModules.pipewire
+      
+      self.nixosModules.firefox # From user config
+      
+    ];
+
+    # Bootloader (matching user's previous config)
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.grub.enable = lib.mkForce false;
+
+    networking.hostName = "nixos";
+    networking.networkmanager.enable = true;
+    time.timeZone = lib.mkForce "Asia/Kolkata";
+    i18n.defaultLocale = lib.mkForce "en_IN";
+    i18n.extraLocaleSettings = lib.mkForce {
+      LC_ADDRESS = "en_IN";
+      LC_IDENTIFICATION = "en_IN";
+      LC_MEASUREMENT = "en_IN";
+      LC_MONETARY = "en_IN";
+      LC_NAME = "en_IN";
+      LC_NUMERIC = "en_IN";
+      LC_PAPER = "en_IN";
+      LC_TELEPHONE = "en_IN";
+      LC_TIME = "en_IN";
+    };
+
+    # Enable CUPS to print documents.
+    services.printing.enable = true;
+
+    # User account
+    users.users.bash = {
+      shell = lib.mkForce pkgs.zsh;
+      packages = with pkgs; [
+        kdePackages.kate
+        # thunderbird
+      ];
+    };
+
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
+    
+    programs.zsh.enable = true;
+    programs.fish.enable = false;
+
+    # System packages from user config
+    environment.systemPackages = with pkgs; [
+      vim
+      wget
+      btop
+      htop
+      git
+      neovim
+      ghostty
+      antigravity
+      tmux
+      wlr-randr
+      vscode
+      starship
+      ripgrep
+      gh  #github cli 
+
+      # langauges and adjacent
+      lua
+      deno
+      go
+      gopls
+      nodejs_24
+      gnumake
+      luajitPackages.luarocks_bootstrap
+      unzip
+      gnutar
+      libgccjit
+      binutils
+      gcc
+      glibc
+    ];
+
+    environment.etc."gitconfig".source = self.packages.${pkgs.system}.gitconfig;
+    environment.variables = {
+      GIT_CONFIG_GLOBAL = "/etc/gitconfig";
+    };
+
+    # Monitor Configuration
+    preferences.monitors = {
+      eDP-1 = {
+        primary = true;
+        x = 0; # Left (laptop screen)
+        y = 0;
+        width = 1920;
+        height = 1080;
+        refreshRate = 144.0;
+        enabled = true;
+      };
+      HDMI-A-1 = {
+        primary = false;
+        x = 1920; # Right of eDP-1 (external monitor)
+        y = 0;
+        width = 1920;
+        height = 1080;
+        refreshRate = 60.0;
+        enabled = true;
+      };
+    };
+
+    system.stateVersion = "25.11";
+  };
+}

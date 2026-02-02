@@ -1,0 +1,84 @@
+building the system configuration...
+warning: Git tree '/home/bash/dotfiles/nixconf' is dirty
+these 26 derivations will be built:
+  /nix/store/zd94q6chvjvspjck3p0f0fhqc1brhyq6-niri.kdl.drv
+  /nix/store/gdxxx1f35bw84pk7hh361r2dbcr1rmnk-niri.drv
+  /nix/store/car0f2w02vvnv7p0qgwav9j52438qfks-niri.drv
+  /nix/store/0j6y9hk8r14ni46a6zmnnjk4gvbvcz2w-system-path.drv
+  /nix/store/fghyhm0hqsy2qx8nsp7bzzx92img2w4i-X-Restart-Triggers-polkit.drv
+  /nix/store/0568q8dn9x6b3jxm6rplrgbw36x12cp5-unit-polkit.service.drv
+  /nix/store/0a7r074l59xlbr2wnrv8pi7vy01llhas-system-shutdown.drv
+  /nix/store/wlk30hlilljfl7dh8gwaxq2gj8vf607d-dbus-1.drv
+  /nix/store/fwzfiq02cgzfl3wnkq7ik4hjq3jfv38h-X-Restart-Triggers-dbus.drv
+  /nix/store/xxnsa6nisqna5y0jcbza52cr3bnbi069-unit-dbus.service.drv
+  /nix/store/36nxv4xa6lvhs7z1pjlh8dv7s7304gkj-user-units.drv
+  /nix/store/38hvr26jpxsjz74lsbxrhsyjym9mq6q4-user-generators.drv
+  /nix/store/a343czza3wmjbxsmc7m11hd2ih7xkz0j-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
+  /nix/store/gy4y07829v752k2fx7b530v622njl01i-unit-systemd-tmpfiles-resetup.service.drv
+  /nix/store/ax80w1yrkyp918iyrz8lb3g5zsqc6srk-greetd.toml.drv
+  /nix/store/v5bdhxhsic9nk026bh2i1gmy2h391pw5-unit-greetd.service.drv
+  /nix/store/z61a7ixgiqskzic9r58xj2v11gasvfl6-unit-dbus.service.drv
+  /nix/store/7id4iywxzkfkx157bj492n7n0qwkh84i-system-units.drv
+  /nix/store/b5siz7z9457gl6q3yl1zp06r30cdy867-system-generators.drv
+  /nix/store/cy9sw8j9fwhhxsbjpxx11amp5mgnllds-desktops.drv
+  /nix/store/pm9sfw4s48zfnzw4qbbxa227r86yjp83-set-environment.drv
+  /nix/store/bp7i74n4k49sjzp711vh8pmdimvs863p-etc-zshenv.drv
+  /nix/store/gy6d02py3d3kzm75kzg2wqic504j2ml1-etc-pam-environment.drv
+  /nix/store/v2inbcmrkp1qkvhdk74cdjws3p9zd92k-etc-profile.drv
+  /nix/store/9fhqkmxhc9m58478sliaw1m5qphv2mpk-etc.drv
+  /nix/store/q8cpas0pxmwhf6i701n0xlfxczzhwvaa-nixos-system-nixos-26.05.20251228.c0b0e0f.drv
+building '/nix/store/a343czza3wmjbxsmc7m11hd2ih7xkz0j-X-Restart-Triggers-systemd-tmpfiles-resetup.drv'...
+building '/nix/store/ax80w1yrkyp918iyrz8lb3g5zsqc6srk-greetd.toml.drv'...
+building '/nix/store/zd94q6chvjvspjck3p0f0fhqc1brhyq6-niri.kdl.drv'...
+building '/nix/store/gy4y07829v752k2fx7b530v622njl01i-unit-systemd-tmpfiles-resetup.service.drv'...
+error: Cannot build '/nix/store/zd94q6chvjvspjck3p0f0fhqc1brhyq6-niri.kdl.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/651cmakw9nq2q4wfdmkivqgsxa05hhfa-niri.kdl
+       Last 13 log lines:
+       > Error:   x error loading config
+       >   |-> error parsing
+       >   `-> error parsing KDL
+       >
+       > Error:   x property `x` is required
+       >     ,-[651cmakw9nq2q4wfdmkivqgsxa05hhfa-niri.kdl:73:1]
+       >  73 | output "HDMI-A-1" {
+       >  74 |   position  {
+       >     :   ^^^^|^^^
+       >     :       `-- node starts here
+       >  75 |     x 1920
+       >     `----
+       >
+       For full logs, run:
+         nix-store -l /nix/store/zd94q6chvjvspjck3p0f0fhqc1brhyq6-niri.kdl.drv
+error: Cannot build '/nix/store/gdxxx1f35bw84pk7hh361r2dbcr1rmnk-niri.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/1fsl592w5zb8k12dwwwpfyf2dwh0qvqn-niri
+error: Cannot build '/nix/store/car0f2w02vvnv7p0qgwav9j52438qfks-niri.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/3kpmsjxp75gmh9sq6cj68nq16555gy0l-niri
+         /nix/store/pnb8m7nprpqiknw5kaxri235w8zhfq90-niri-doc
+error: Cannot build '/nix/store/car0f2w02vvnv7p0qgwav9j52438qfks-niri.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/3kpmsjxp75gmh9sq6cj68nq16555gy0l-niri
+         /nix/store/pnb8m7nprpqiknw5kaxri235w8zhfq90-niri-doc
+error: Cannot build '/nix/store/cy9sw8j9fwhhxsbjpxx11amp5mgnllds-desktops.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/lrz118ji2qpzs41488pd0099jj1sirww-desktops
+error: Cannot build '/nix/store/b5siz7z9457gl6q3yl1zp06r30cdy867-system-generators.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/4d255vlpgr32v41lbaz9knaxycv6dy6i-system-generators
+error: Cannot build '/nix/store/0j6y9hk8r14ni46a6zmnnjk4gvbvcz2w-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/x6ba999v5b9j9b9ggqjyzi0kgl3k4jva-system-path
+error: Cannot build '/nix/store/q8cpas0pxmwhf6i701n0xlfxczzhwvaa-nixos-system-nixos-26.05.20251228.c0b0e0f.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/zk0q7w8vdy5c8fjb0xw4063sjl2qds77-nixos-system-nixos-26.05.20251228.c0b0e0f
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '/home/bash/dotfiles/nixconf#nixosConfigurations."nixos".config.system.build.toplevel'' returned non-zero exit status 1.
