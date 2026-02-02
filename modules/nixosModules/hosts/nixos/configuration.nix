@@ -9,7 +9,7 @@
     ];
   };
 
-  flake.nixosModules.hostNixos = {pkgs, lib, ...}: {
+  flake.nixosModules.hostNixos = {pkgs, lib, config, ...}: {
     imports = [
       self.nixosModules.base
       self.nixosModules.general
@@ -54,8 +54,9 @@
       ];
     };
 
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
+    # NVIDIA GPU driver
+    hardware.nvidia.open = true;
+    services.xserver.videoDrivers = [ "nvidia" ];
     
     programs.zsh.enable = true;
     programs.fish.enable = false;
@@ -84,6 +85,10 @@
       binutils
       gcc
       glibc
+
+      # GPU monitoring (NVIDIA GTX 1650)
+      pkgs.nvitop
+      pkgs.gpustat
 
       # wrapped environment
       self.packages.${pkgs.system}.environment
