@@ -5,7 +5,6 @@
       "SUPER + d"."s".package = pkgs.pwvucontrol;
     };
 
-
     persistance.cache.directories = [
       ".local/state/wireplumber"
     ];

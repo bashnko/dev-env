@@ -1,8 +1,5 @@
 {
-  flake.nixosModules.base = {
-    lib,
-    ...
-  }: let
+  flake.nixosModules.base = {lib, ...}: let
     inherit
       (lib)
       types

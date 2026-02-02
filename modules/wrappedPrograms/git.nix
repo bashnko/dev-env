@@ -12,10 +12,10 @@
       [commit]
         gpgsign = true
       [credential "https://github.com"]
-        helper = 
+        helper =
         helper = !${pkgs.gh}/bin/gh auth git-credential
       [credential "https://gist.github.com"]
-        helper = 
+        helper =
         helper = !${pkgs.gh}/bin/gh auth git-credential
     '';
   in {

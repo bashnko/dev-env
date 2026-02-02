@@ -168,29 +168,9 @@ in {
                 cmd = "noctalia-shell ipc call wifi togglePanel";
               }
               {
-                key = "f";
-                desc = "Firefox";
-                cmd = "firefox";
-              }
-              {
-                key = "t";
-                desc = "Telegram";
-                cmd = "Telegram";
-              }
-              {
-                key = "d";
-                desc = "Discord";
-                cmd = "vesktop";
-              }
-              {
-                key = "m";
-                desc = "Youtube Music";
-                cmd = "pear-desktop";
-              }
-              {
-                key = "s";
-                desc = "Display Settings";
-                cmd = "kitty wlr-randr";
+                key = "p";
+                desc = "packge search";
+                cmd = "xdg-open https://search.nixos.org/packages";
               }
             ];
           };

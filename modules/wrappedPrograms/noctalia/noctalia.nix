@@ -325,7 +325,7 @@ in {
         audioCodec = "opus";
         audioSource = "default_output";
         colorRange = "limited";
-        directory = "/home/yurii/Videos";
+        directory = "/home/bash/Videos/screen-records";
         frameRate = 60;
         quality = "very_high";
         showCursor = true;

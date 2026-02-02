@@ -31,7 +31,6 @@ in {
           shell_integration = "enabled";
 
           term = "xterm-256color";
-          
 
           map = [
             "alt+1 goto_tab 1"
@@ -118,5 +117,5 @@ in {
         "-c" = config.configFile.path;
       };
     };
-});
+  });
 }

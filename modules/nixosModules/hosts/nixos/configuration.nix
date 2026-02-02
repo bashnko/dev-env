@@ -9,16 +9,20 @@
     ];
   };
 
-  flake.nixosModules.hostNixos = {pkgs, lib, config, ...}: {
+  flake.nixosModules.hostNixos = {
+    pkgs,
+    lib,
+    config,
+    ...
+  }: {
     imports = [
       self.nixosModules.base
       self.nixosModules.general
-      self.nixosModules.desktop 
-      
+      self.nixosModules.desktop
+
       self.nixosModules.pipewire
-      
+
       self.nixosModules.firefox # From user config
-      
     ];
 
     # Bootloader (matching user's previous config)
@@ -41,9 +45,9 @@
       LC_TELEPHONE = "en_IN";
       LC_TIME = "en_IN";
     };
-    
+
     # Ensure UTF-8 locale is generated
-    i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "en_IN/UTF-8" ];
+    i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "en_IN/UTF-8"];
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -59,8 +63,8 @@
 
     # NVIDIA GPU driver
     hardware.nvidia.open = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
-    
+    services.xserver.videoDrivers = ["nvidia"];
+
     programs.zsh.enable = true;
     programs.fish.enable = false;
 
@@ -72,7 +76,7 @@
       wlr-randr
       vscode
       starship
-      gh  #github cli 
+      gh #github cli
 
       # langauges and adjacent
       lua
@@ -89,7 +93,7 @@
       gcc
       glibc
 
-      # GPU monitoring (NVIDIA GTX 1650)
+      # GPU monitoring
       pkgs.nvitop
       pkgs.gpustat
 

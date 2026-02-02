@@ -58,6 +58,7 @@
         pkgs.lazygit
         pkgs.tmux
         pkgs.gh
+        pkgs.mpv-unwrapped
 
         # wrapped
         pkgs.neovim

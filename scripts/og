@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 VAULT_DIR="$HOME/SecondBrain/"
 SOURCE_DIR="reviewed"
