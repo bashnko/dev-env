@@ -63,18 +63,11 @@
     # System packages from user config
     environment.systemPackages = with pkgs; [
       vim
-      wget
-      btop
-      htop
-      git
-      neovim
       ghostty
       antigravity
-      tmux
       wlr-randr
       vscode
       starship
-      ripgrep
       gh  #github cli 
 
       # langauges and adjacent
@@ -91,6 +84,9 @@
       binutils
       gcc
       glibc
+
+      # wrapped environment
+      self.packages.${pkgs.system}.environment
     ];
 
     environment.etc."gitconfig".source = self.packages.${pkgs.system}.gitconfig;

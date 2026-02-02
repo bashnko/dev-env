@@ -9,9 +9,8 @@
     ...
   }: let
     lf = self'.packages.lf;
-    starship = self'.packages.starship;
     zshrc = pkgs.writeText "zshrc" ''
-      eval "$(${lib.getExe starship} init zsh)"
+      eval "$(${lib.getExe pkgs.starship} init zsh)"
       eval "$(${lib.getExe pkgs.zoxide} init zsh)"
       
       if (( ''${+commands[direnv]} )); then
@@ -24,15 +23,12 @@
       package = pkgs.zsh;
       runtimeInputs = [
         pkgs.zoxide
-        starship
+        pkgs.starship
         pkgs.direnv
         lf
       ];
       env = {
         ZDOTDIR = "$HOME/.config/zsh";
-      };
-      flags = {
-        "-d" = zshrc;
       };
     };
   };

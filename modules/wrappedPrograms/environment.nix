@@ -56,17 +56,17 @@
         pkgs.ffmpeg
         pkgs.yt-dlp
         pkgs.lazygit
+        pkgs.tmux
+        pkgs.gh
 
         # wrapped
-        self'.packages.neovimDynamic
+        pkgs.neovim
         self'.packages.qalc
         self'.packages.lf
         self'.packages.git
-        self'.packages.jujutsu
-        self'.packages.jjui
       ];
       env = {
-        EDITOR = getExe self'.packages.neovimDynamic;
+        EDITOR = getExe pkgs.neovim;
         GIT_CONFIG_GLOBAL = self'.packages.gitconfig;
         GIT_AUTHOR_NAME = "bashneko";
         GIT_AUTHOR_EMAIL = "thestraybyte@gmail.com";

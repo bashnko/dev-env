@@ -1,4 +1,3 @@
-// CREDIT: https://github.com/end-4/dots-hyprland/commit/ad7fdd1d3fcda4dfccef2a0f5afdfd09c705f840
 pragma Singleton
 import QtQuick
 import Quickshell.Hyprland

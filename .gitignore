@@ -1,6 +1,6 @@
 .env
 plugins
 Session.vim
-result*
+result
 build.log
 temp.md
