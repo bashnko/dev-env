@@ -52,16 +52,21 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' squeeze-slashes true
 
-function git_prompt_info() {
-  [[ -d .git ]] || git rev-parse --git-dir &>/dev/null || return 0
-  local ref
-  ref=$(GIT_OPTIONAL_LOCKS=0 git symbolic-ref --short HEAD 2>/dev/null) || return 0
-  print -n "%{$fg[magenta]%}(${ref:gs/%/%%})%{$reset_color%} "
+
+git_branch() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
+  echo " %F{magenta} ${branch}%f"
 }
 
-PROMPT="%F{#adadd0}%1~%{$reset_color%} %(?:%{$fg_bold[magenta]%}:%{$fg_bold[red]%})❯%{$reset_color%} "'$(git_prompt_info)'
+# Nix shell indicator 
+nix_shell_indicator() {
+  [[ -n "$IN_NIX_SHELL" ]] && echo " %F{cyan}❄️%f"
+}
 
-# source aliases
+# custom prompt: dir  branch [nix] ❯
+PROMPT='%F{blue}%1~%f$(git_branch)$(nix_shell_indicator) %F{magenta}❯%f '
+
 [[ -f "${ZDOTDIR:-$HOME/.config/zsh}/aliases.zsh" ]] && source "${ZDOTDIR:-$HOME/.config/zsh}/aliases.zsh"
 
 extract() {
@@ -103,5 +108,6 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M viins '^w' backward-kill-word
 
-source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/key-bindings.zsh
 bindkey -s '^F' 'muxify\n'
+bindkey -s '^G' 'open_git\n'

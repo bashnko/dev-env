@@ -3,44 +3,16 @@
 src_dir="$HOME/.config/"
 config_dir="$(cd "$(dirname "$0")/config" && pwd)"
 
-script_dir="$HOME/dev-env/scripts/"
-mkdir -p "$script_dir"
-
-
 if [ ! -d "$config_dir" ]; then
 	echo "local config directory not found: $config_dir"
 	exit 1
 fi
 
-
 find "$src_dir" -maxdepth 1 -type l | while read -r link; do
 	if [ ! -e "$link" ]; then
-		# echo "removing broken symlink: $link -> $target_path"
 		rm "$link"
 	fi
 done
-
-scripts_dir="$(cd "$(dirname "$0")/scripts" && pwd)"
-
-if [ -d "$scripts_dir" ]; then
-	for script in "$scripts_dir"/*; do
-		[ -f "$script" ] || continue
-		script_name="$(basename "$script")"
-		script_target="$script_dir$script_name"
-		if [ -L "$script_target" ] || [ -e "$script_target" ]; then
-			rm -rf "$script_target"
-		fi
-		ln -s "$script" "$script_target"
-	done
-fi
-
-
-find "$script_dir" -maxdepth 1 -type l | while read -r link; do
-  if [ ! -e "$link" ]; then
-    rm "$link"
-  fi
-done
-
 
 for folder in "$config_dir"/*/; do
 	[ -d "$folder" ] || continue
@@ -50,22 +22,4 @@ for folder in "$config_dir"/*/; do
 		rm -rf "$target"
 	fi
 	ln -s "$folder" "$target"
-
-	if [ -d "$folder/scripts" ]; then
-			found_script=false
-			for script in "$folder/scripts"/*; do
-				[ -f "$script" ] || continue
-				found_script=true
-				script_name="$(basename "$script")"
-				script_target="$script_dir$script_name"
-				if [ -L "$script_target" ] || [ -e "$script_target" ]; then
-					echo "warning: $script_target already exists. overwriting."
-					rm -rf "$script_target"
-				fi
-				ln -s "$script" "$script_target"
-			done
-			if [ "$found_script" = false ]; then
-				echo "no scripts found in $folder/scripts."
-			fi
-	fi
 done

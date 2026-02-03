@@ -63,7 +63,12 @@
 
     # NVIDIA GPU driver
     hardware.nvidia.open = true;
+    hardware.nvidia.powerManagement.enable = true;  # Fix suspend/resume issues
+    hardware.nvidia.powerManagement.finegrained = false;
     services.xserver.videoDrivers = ["nvidia"];
+
+    # Preserve video memory on suspend (fixes external monitor not waking)
+    hardware.nvidia.nvidiaPersistenced = true;
 
     programs.zsh.enable = true;
     programs.fish.enable = false;

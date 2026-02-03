@@ -40,13 +40,13 @@ in {
       };
       bar = {
         capsuleOpacity = 1;
-        density = "comfortable";
+        density = "compact";
         exclusive = true;
         floating = false;
         marginHorizontal = 0.25;
         marginVertical = 0.25;
         monitors = [];
-        outerCorners = true;
+        outerCorners = false;
         position = "bottom";
         showCapsule = false;
         showOutline = false;
@@ -271,9 +271,9 @@ in {
         showCalendarEvents = true;
         showCalendarWeather = true;
         showWeekNumberInCalendar = false;
-        use12hourFormat = false;
+        use12hourFormat = true;
         useFahrenheit = false;
-        weatherEnabled = true;
+        weatherEnabled = false;
         weatherShowEffects = true;
       };
       network = {wifiEnabled = true;};
@@ -290,7 +290,7 @@ in {
         backgroundOpacity = 1;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
-        enabled = true;
+        enabled = false;
         location = "top_right";
         lowUrgencyDuration = 8;
         monitors = [];

@@ -74,8 +74,18 @@
         GIT_COMMITTER_NAME = "bashneko";
         GIT_COMMITTER_EMAIL = "thestraybyte@gmail.com";
 
-        # dir paths
-        PATH = "$HOME/dev-env/scripts:$PATH";
+        # Go configuration - install packages to ~/go
+        GOPATH = "$HOME/go";
+        GOBIN = "$HOME/go/bin";
+        # Disable CGO by default - Go's auto-downloaded toolchains can't find NixOS's C libs
+        # For packages requiring CGO, use: CGO_ENABLED=1 go install ...
+        CGO_ENABLED = "0";
+
+        # npm configuration - install global packages to ~/.npm-global
+        NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+
+        # dir paths - include go and npm bin directories
+        PATH = "$HOME/dev-env/scripts:$HOME/go/bin:$HOME/.npm-global/bin:$PATH";
       };
     };
   };

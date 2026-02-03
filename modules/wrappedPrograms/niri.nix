@@ -197,20 +197,52 @@ in {
               layout.gaps = 0;
               open-on-output = "HDMI-A-1";
             };
-          in {
-            # Workspaces 0-4 on laptop display (eDP-1)
-            "w0" = edp-settings;
-            "w1" = hdmi-settings;
-            "w2" = hdmi-settings;
-            "w3" = hdmi-settings;
-            "w4" = edp-settings;
-            # Workspaces 5-9 on external monitor (HDMI-A-1)
-            "w5" = hdmi-settings;
-            "w6" = hdmi-settings;
-            "w7" = hdmi-settings;
-            "w8" = hdmi-settings;
-            "w9" = edp-settings;
-          };
+            outputs = {
+              "eDP-1" = {
+                mode = "1920x1080@144.000";
+                position = {
+                  x = 0;
+                  y = 0;
+                  _keys = true;
+                };
+              };
+              "HDMI-A-1" = {
+                mode = "1920x1080@60.000";
+                position = {
+                  x = 1920;
+                  y = 0;
+                  _keys = true;
+                };
+              };
+            };
+            hdmiConnected = builtins.elem "HDMI-A-1" (builtins.attrNames outputs);
+          in
+            if hdmiConnected then {
+              # Workspaces 0-4 on laptop display (eDP-1)
+              "w0" = edp-settings;
+              "w1" = hdmi-settings;
+              "w2" = hdmi-settings;
+              "w3" = hdmi-settings;
+              "w4" = edp-settings;
+              # Workspaces 5-9 on external monitor (HDMI-A-1)
+              "w5" = hdmi-settings;
+              "w6" = hdmi-settings;
+              "w7" = hdmi-settings;
+              "w8" = hdmi-settings;
+              "w9" = edp-settings;
+            } else {
+              # All workspaces fallback to laptop display if HDMI-A-1 is not connected
+              "w0" = edp-settings;
+              "w1" = edp-settings;
+              "w2" = edp-settings;
+              "w3" = edp-settings;
+              "w4" = edp-settings;
+              "w5" = edp-settings;
+              "w6" = edp-settings;
+              "w7" = edp-settings;
+              "w8" = edp-settings;
+              "w9" = edp-settings;
+            };
 
           window-rules = [
             {

@@ -16,6 +16,7 @@ export HISTIGNORE='exit:cd:ls:bg:fg:history:vim:clear:man:ll:la:fc'
 export KEYTIMEOUT=1
 export MANPAGER="nvim +Man!"
 export PATH="$HOME/.local/scripts:$PATH"
+export PATH="$HOME/dev-env/scripts:$PATH"
 export PATH="$HOME/.local/new:$PATH"
 export PATH="$HOME/new:$PATH"
 export BUN_INSTALL="$XDG_DATA_HOME/bun"
