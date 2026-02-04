@@ -69,6 +69,8 @@ in {
           };
 
           binds = {
+            "Print".spawn-sh = "$HOME/dev-env/scripts/region_ss";
+            "Ctrl+Print".spawn-sh = "$HOME/dev-env/scripts/niri_ss";
             "Alt+Return".spawn = "kitty";
 
             "Alt+B".spawn = "firefox";
@@ -217,7 +219,8 @@ in {
             };
             hdmiConnected = builtins.elem "HDMI-A-1" (builtins.attrNames outputs);
           in
-            if hdmiConnected then {
+            if hdmiConnected
+            then {
               # Workspaces 0-4 on laptop display (eDP-1)
               "w0" = edp-settings;
               "w1" = hdmi-settings;
@@ -230,7 +233,8 @@ in {
               "w7" = hdmi-settings;
               "w8" = hdmi-settings;
               "w9" = edp-settings;
-            } else {
+            }
+            else {
               # All workspaces fallback to laptop display if HDMI-A-1 is not connected
               "w0" = edp-settings;
               "w1" = edp-settings;

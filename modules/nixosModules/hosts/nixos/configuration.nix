@@ -63,7 +63,7 @@
 
     # NVIDIA GPU driver
     hardware.nvidia.open = true;
-    hardware.nvidia.powerManagement.enable = true;  # Fix suspend/resume issues
+    hardware.nvidia.powerManagement.enable = true; # Fix suspend/resume issues
     hardware.nvidia.powerManagement.finegrained = false;
     services.xserver.videoDrivers = ["nvidia"];
 
@@ -101,6 +101,11 @@
       # GPU monitoring
       pkgs.nvitop
       pkgs.gpustat
+
+      # Screenshot tools
+      grim
+      slurp
+      wl-clipboard
 
       # wrapped environment
       self.packages.${pkgs.system}.environment

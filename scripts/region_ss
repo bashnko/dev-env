@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+mkdir -p "$HOME/Pictures/screenshots"
+FILE="$HOME/Pictures/screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+grim -g "$(slurp -w 0)" "$FILE"
+cat "$FILE" | wl-copy
+
