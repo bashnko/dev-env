@@ -89,6 +89,7 @@
       go
       gopls
       nodejs_24
+      pnpm_9
       gnumake
       luajitPackages.luarocks_bootstrap
       unzip
