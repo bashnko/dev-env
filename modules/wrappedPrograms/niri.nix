@@ -71,7 +71,7 @@ in {
           binds = {
             "Print".spawn-sh = "$HOME/dev-env/scripts/region_ss";
             "Ctrl+Print".spawn-sh = "$HOME/dev-env/scripts/niri_ss";
-            "Alt+Return".spawn = "kitty";
+            "Alt+Return".spawn = "ghostty";
 
             "Alt+B".spawn = "firefox";
 
@@ -140,13 +140,15 @@ in {
 
             # Lock screen
             "Alt+Super+Escape".spawn-sh = "loginctl lock-session";
+            "Alt+Ctrl+s".spawn-sh = "noctalia-shell ipc call sessionMenu lockAndSuspend";
+            "Alt+Ctrl+r".spawn-sh = "sytemctl reboot";
 
             "Alt+WheelScrollDown".focus-column-left = null;
             "Alt+WheelScrollUp".focus-column-right = null;
             "Alt+Ctrl+WheelScrollDown".focus-workspace-down = null;
             "Alt+Ctrl+WheelScrollUp".focus-workspace-up = null;
 
-            "Alt+Ctrl+S".spawn-sh = ''${getExe pkgs.grim} -l 0 - | ${pkgs.wl-clipboard}/bin/wl-copy'';
+            # "Alt+Ctrl+S".spawn-sh = ''${getExe pkgs.grim} -l 0 - | ${pkgs.wl-clipboard}/bin/wl-copy'';
 
             "Alt+Shift+E".spawn-sh = ''${pkgs.wl-clipboard}/bin/wl-paste | ${getExe pkgs.swappy} -f -'';
 
@@ -174,7 +176,33 @@ in {
                 desc = "packge search";
                 cmd = "xdg-open https://search.nixos.org/packages";
               }
+              {
+                key = "d";
+                desc = "discord";
+                cmd = "xdg-open https://discord.com/channels/@me";
+              }
             ];
+
+          ##custom menu
+             "Alt+i".spawn-sh = self.mkWhichKeyExe pkgs [
+              {
+                key = "b";
+                desc = "Bluetooth";
+                cmd = "noctalia-shell ipc call bluetooth togglePanel";
+              }
+              {
+                key = "w";
+                desc = "Wifi";
+                cmd = "noctalia-shell ipc call wifi togglePanel";
+              }
+              {
+                key = "p";
+                desc = "packge search";
+                cmd = "xdg-open https://search.nixos.org/packages";
+              }
+            ];
+
+
           };
 
           layout = {

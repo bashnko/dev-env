@@ -63,7 +63,7 @@
 
     # NVIDIA GPU driver
     hardware.nvidia.open = true;
-    hardware.nvidia.powerManagement.enable = true; # Fix suspend/resume issues
+    hardware.nvidia.powerManagement.enable = true;
     hardware.nvidia.powerManagement.finegrained = false;
     services.xserver.videoDrivers = ["nvidia"];
 
@@ -88,6 +88,8 @@
       deno
       go
       gopls
+      rustc
+      cargo
       nodejs_24
       pnpm_9
       gnumake

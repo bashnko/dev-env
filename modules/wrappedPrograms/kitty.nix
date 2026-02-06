@@ -47,7 +47,7 @@ in {
             "ctrl+shift+t new_tab"
           ];
 
-          background = theme.base00;
+          background = "#000000";
           foreground = theme.base07;
 
           cursor = theme.base07;

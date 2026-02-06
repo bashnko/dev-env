@@ -25,7 +25,7 @@ in {
         position = "center";
         showCategories = true;
         sortByMostUsed = true;
-        terminalCommand = "kitty -e";
+        terminalCommand = "ghostty";
         useApp2Unit = false;
         viewMode = "list";
       };
