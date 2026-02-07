@@ -183,7 +183,7 @@ in {
               }
             ];
 
-          ##custom menu
+              ##custom menu
              "Alt+i".spawn-sh = self.mkWhichKeyExe pkgs [
               {
                 key = "b";

@@ -40,7 +40,7 @@ in {
       };
       bar = {
         capsuleOpacity = 1;
-        density = "compact";
+        density = "mini";
         exclusive = true;
         floating = false;
         marginHorizontal = 0.25;
@@ -99,10 +99,6 @@ in {
             {
               displayMode = "alwaysHide";
               id = "Microphone";
-            }
-            {
-              displayMode = "forceOpen";
-              id = "KeyboardLayout";
             }
             {
               customFont = "";

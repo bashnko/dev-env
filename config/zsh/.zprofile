@@ -30,6 +30,7 @@ export PATH="$GOBIN:$PATH"
 
 # cargo and rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
 
 export CLICOLOR=1

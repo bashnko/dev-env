@@ -22,10 +22,9 @@
 
       self.nixosModules.pipewire
 
-      self.nixosModules.firefox # From user config
+      self.nixosModules.firefox
     ];
 
-    # Bootloader (matching user's previous config)
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.grub.enable = lib.mkForce false;
@@ -56,8 +55,6 @@
     users.users.bash = {
       shell = lib.mkForce pkgs.zsh;
       packages = with pkgs; [
-        kdePackages.kate
-        # thunderbird
       ];
     };
 
@@ -77,7 +74,6 @@
     environment.systemPackages = with pkgs; [
       vim
       ghostty
-      antigravity
       wlr-randr
       vscode
       starship

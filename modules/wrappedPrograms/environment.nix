@@ -53,6 +53,7 @@
         pkgs.tree-sitter
         pkgs.imagemagick
         pkgs.imv
+        pkgs.shellcheck
         pkgs.ffmpeg
         pkgs.yt-dlp
         pkgs.lazygit
