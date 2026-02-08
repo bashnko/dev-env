@@ -8,8 +8,11 @@ if command -v colordiff &>/dev/null; then
   alias diff='colordiff'
 fi
 
-alias vim="nvim"
-alias vi="nvim"
+#temporary workaround
+alias vim="$HOME/.local/share/bob/nightly/bin/nvim"
+alias vi="$HOME/.local/share/bob/nightly/bin/nvim"
+alias vm="$HOME/.local/share/bob/nightly/bin/nvim"
+alias v="$HOME/.local/share/bob/nightly/bin/nvim"
 
 alias ls='ls --color=auto'
 alias ll='ls -lh'
@@ -47,8 +50,6 @@ mcd() {
 
 
 # others (via setl)
-alias vm="vim"
-alias v="nvim"
 alias d="docker"
 alias open="xdg-open"
 alias nrs="sudo nixos-rebuild switch --flake /home/bash/dev-env#nixos"
