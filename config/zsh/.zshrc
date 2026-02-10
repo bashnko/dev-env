@@ -1,3 +1,4 @@
+source <(fzf --zsh)
 ZSH_PLUGINS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 DISABLE_BELL=true
 setopt prompt_subst
@@ -93,6 +94,23 @@ qfind() {
   [[ -z "$1" ]] && { print "Usage: qfind <pattern>" >&2; return 1; }
   find . -name "*$1*"
 }
+export MANPAGER="nvim +Man!"
+
+## fzf color
+export FZF_DEFAULT_OPTS='--color=fg:#cdcdcd
+--color=bg:#000000
+--color=hl:#f3be7c
+--color=fg+:#aeaed1
+--color=bg+:#252530
+--color=hl+:#f3be7c
+--color=border:#606079
+--color=header:#6e94b2
+--color=gutter:#141415
+--color=spinner:#7fa563
+--color=info:#f3be7c
+--color=pointer:#aeaed1
+--color=marker:#d8647e
+--color=prompt:#bb9dbd'
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
@@ -102,12 +120,10 @@ WORDCHARS=''
 
 bindkey '^p' up-line-or-history
 bindkey '^n' down-line-or-history
-bindkey '^r' history-incremental-search-backward
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M viins '^w' backward-kill-word
 
-# source /usr/share/fzf/key-bindings.zsh
 bindkey -s '^F' 'muxify\n'
 bindkey -s '^G' 'open_git\n'

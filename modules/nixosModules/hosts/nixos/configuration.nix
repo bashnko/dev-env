@@ -68,6 +68,7 @@
     hardware.nvidia.nvidiaPersistenced = true;
 
     programs.zsh.enable = true;
+    programs.direnv.enableZshIntegration = true;
     programs.fish.enable = false;
 
     # System packages from user config
