@@ -54,6 +54,7 @@
     # User account
     users.users.bash = {
       shell = lib.mkForce pkgs.zsh;
+      extraGroups = ["input" "uucp"];
       packages = with pkgs; [
       ];
     };
@@ -70,6 +71,7 @@
     programs.zsh.enable = true;
     programs.direnv.enableZshIntegration = true;
     programs.fish.enable = false;
+    hardware.keyboard.qmk.enable = true;
 
     # System packages from user config
     environment.systemPackages = with pkgs; [
@@ -107,6 +109,11 @@
       slurp
       wl-clipboard
 
+      # qmk related packages
+      qmk
+      qmk-udev-rules
+      via
+
       # wrapped environment
       self.packages.${pkgs.system}.environment
     ];
@@ -115,6 +122,11 @@
     environment.variables = {
       GIT_CONFIG_GLOBAL = "/etc/gitconfig";
     };
+
+    services.udev.packages = with pkgs; [
+      qmk-udev-rules
+      via
+    ];
 
     # Monitor Configuration
     preferences.monitors = {

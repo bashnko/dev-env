@@ -57,7 +57,7 @@ zstyle ':completion:*' squeeze-slashes true
 git_branch() {
   local branch
   branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
-  echo " %F{magenta} ${branch}%f"
+  echo " %F{red} ${branch}%f"
 }
 
 # Nix shell indicator 
