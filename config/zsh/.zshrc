@@ -57,12 +57,12 @@ zstyle ':completion:*' squeeze-slashes true
 git_branch() {
   local branch
   branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
-  echo " %F{red} ${branch}%f"
+  echo "%F{red} ${branch}%f"
 }
 
 # Nix shell indicator 
 nix_shell_indicator() {
-  [[ -n "$IN_NIX_SHELL" ]] && echo " %F{cyan}❄️%f"
+  [[ -n "$IN_NIX_SHELL" ]] && echo " %F{cyan}🐈‍⬛%f"
 }
 
 # custom prompt: dir  branch [nix] ❯

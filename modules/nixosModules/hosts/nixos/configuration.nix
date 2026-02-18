@@ -45,7 +45,6 @@
       LC_TIME = "en_IN";
     };
 
-    # Ensure UTF-8 locale is generated
     i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "en_IN/UTF-8"];
 
     # Enable CUPS to print documents.
@@ -54,7 +53,8 @@
     # User account
     users.users.bash = {
       shell = lib.mkForce pkgs.zsh;
-      extraGroups = ["input" "uucp"];
+      # QMK/VIA and device access groups
+      extraGroups = ["input" "uucp" "plugdev" "dialout" "wheel"];
       packages = with pkgs; [
       ];
     };
@@ -99,6 +99,9 @@
       binutils
       gcc
       glibc
+      usbutils
+      kicad
+
 
       # GPU monitoring
       pkgs.nvitop
@@ -123,9 +126,23 @@
       GIT_CONFIG_GLOBAL = "/etc/gitconfig";
     };
 
+    # QMK/VIA udev rules (add more common vendor/product IDs)
+    services.udev.extraRules = ''
+      # QMK/VIA common rules
+      SUBSYSTEM=="usb", ATTR{idVendor}=="03eb", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1c11", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1209", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="2341", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="342d", ATTR{idProduct}=="e453", MODE="0666"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="258a", MODE="0666"
+      KERNEL=="hidraw*", MODE="0666"
+    '';
+
     services.udev.packages = with pkgs; [
-      qmk-udev-rules
-      via
+      pkgs.qmk-udev-rules
+      pkgs.via
     ];
 
     # Monitor Configuration

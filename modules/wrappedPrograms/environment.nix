@@ -60,6 +60,7 @@
         pkgs.tmux
         pkgs.gh
         pkgs.mpv-unwrapped
+        pkgs.rofi
 
         # wrapped
         pkgs.neovim
