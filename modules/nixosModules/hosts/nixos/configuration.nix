@@ -73,6 +73,8 @@
     programs.fish.enable = false;
     hardware.keyboard.qmk.enable = true;
 
+    services.openssh.enable = true;
+
     # System packages from user config
     environment.systemPackages = with pkgs; [
       vim
@@ -81,6 +83,7 @@
       vscode
       starship
       gh #github cli
+      obsidian
 
       # langauges and adjacent
       lua
@@ -90,6 +93,8 @@
       rustc
       cargo
       nodejs_24
+      python315
+      gcc-arm-embedded
       pnpm_9
       gnumake
       luajitPackages.luarocks_bootstrap
@@ -98,6 +103,8 @@
       libgccjit
       binutils
       gcc
+      pkgsCross.avr.buildPackages.gcc
+      avrdude
       glibc
       usbutils
       kicad
@@ -116,6 +123,7 @@
       qmk
       qmk-udev-rules
       via
+      hidapi
 
       # wrapped environment
       self.packages.${pkgs.system}.environment
@@ -162,7 +170,7 @@
         y = 0;
         width = 1920;
         height = 1080;
-        refreshRate = 60.0;
+        refreshRate = 75.0;
         enabled = true;
       };
     };

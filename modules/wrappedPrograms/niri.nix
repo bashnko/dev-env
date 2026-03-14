@@ -59,7 +59,7 @@ in {
               };
             };
             "HDMI-A-1" = {
-              mode = "1920x1080@60.000";
+              mode = "1920x1080@75.000";
               position = {
                 x = 1920;
                 y = 0;
@@ -237,7 +237,7 @@ in {
                 };
               };
               "HDMI-A-1" = {
-                mode = "1920x1080@60.000";
+                mode = "1920x1080@75.000";
                 position = {
                   x = 1920;
                   y = 0;
@@ -249,13 +249,13 @@ in {
           in
             if hdmiConnected
             then {
-              # Workspaces 0-4 on laptop display (eDP-1)
+              #  0-4 on laptop display (eDP-1)
               "w0" = edp-settings;
               "w1" = hdmi-settings;
               "w2" = hdmi-settings;
               "w3" = hdmi-settings;
               "w4" = edp-settings;
-              # Workspaces 5-9 on external monitor (HDMI-A-1)
+              #  5-9 on external monitor (HDMI-A-1)
               "w5" = hdmi-settings;
               "w6" = hdmi-settings;
               "w7" = hdmi-settings;
@@ -263,7 +263,6 @@ in {
               "w9" = edp-settings;
             }
             else {
-              # All workspaces fallback to laptop display if HDMI-A-1 is not connected
               "w0" = edp-settings;
               "w1" = edp-settings;
               "w2" = edp-settings;
@@ -278,7 +277,7 @@ in {
 
           window-rules = [
             {
-              # Window shadows
+              # window shadows
               shadow = {
                 on = null;
                 softness = 30;
