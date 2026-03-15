@@ -71,88 +71,88 @@ in {
           binds = {
             "Print".spawn-sh = "$HOME/dev-env/scripts/region_ss";
             "Ctrl+Print".spawn-sh = "$HOME/dev-env/scripts/niri_ss";
-            "Alt+Return".spawn = "ghostty";
+            "Mod+Return".spawn = "ghostty";
 
-            "Alt+B".spawn = "firefox";
+            "Mod+B".spawn = "firefox";
 
-            "Alt+Q".close-window = null;
-            "Alt+F".maximize-column = null;
-            "Alt+G".fullscreen-window = null;
-            "Alt+Shift+F".toggle-window-floating = null;
-            "Alt+C".center-column = null;
+            "Mod+Q".close-window = null;
+            "Mod+F".maximize-column = null;
+            "Mod+G".fullscreen-window = null;
+            "Mod+Shift+F".toggle-window-floating = null;
+            "Mod+C".center-column = null;
 
-            "Alt+H".focus-column-left = null;
-            "Alt+L".focus-column-right = null;
-            "Alt+K".focus-window-up = null;
-            "Alt+J".focus-window-down = null;
+            "Mod+H".focus-column-left = null;
+            "Mod+L".focus-column-right = null;
+            "Mod+K".focus-window-up = null;
+            "Mod+J".focus-window-down = null;
 
             # Monitor focus (vim-style with Super modifier)
-            "Alt+Super+H".focus-monitor-left = null;
-            "Alt+Super+L".focus-monitor-right = null;
-            "Alt+Super+Shift+H".move-column-to-monitor-left = null;
-            "Alt+Super+Shift+L".move-column-to-monitor-right = null;
+            "Mod+Super+H".focus-monitor-left = null;
+            "Mod+Super+L".focus-monitor-right = null;
+            "Mod+Super+Shift+H".move-column-to-monitor-left = null;
+            "Mod+Super+Shift+L".move-column-to-monitor-right = null;
 
             # Arrow key alternatives (for non-vim users)
-            "Alt+Left".focus-column-left = null;
-            "Alt+Right".focus-column-right = null;
-            "Alt+Up".focus-window-up = null;
-            "Alt+Down".focus-window-down = null;
+            "Mod+Left".focus-column-left = null;
+            "Mod+Right".focus-column-right = null;
+            "Mod+Up".focus-window-up = null;
+            "Mod+Down".focus-window-down = null;
 
             # Move columns/windows (vim-style)
-            "Alt+Shift+H".move-column-left = null;
-            "Alt+Shift+L".move-column-right = null;
-            "Alt+Shift+K".move-window-up = null;
-            "Alt+Shift+J".move-window-down = null;
+            "Mod+Shift+H".move-column-left = null;
+            "Mod+Shift+L".move-column-right = null;
+            "Mod+Shift+K".move-window-up = null;
+            "Mod+Shift+J".move-window-down = null;
 
-            "Alt+1".focus-workspace = "w0";
-            "Alt+2".focus-workspace = "w1";
-            "Alt+3".focus-workspace = "w2";
-            "Alt+4".focus-workspace = "w3";
-            "Alt+5".focus-workspace = "w4";
-            "Alt+6".focus-workspace = "w5";
-            "Alt+7".focus-workspace = "w6";
-            "Alt+8".focus-workspace = "w7";
-            "Alt+9".focus-workspace = "w8";
-            "Alt+0".focus-workspace = "w9";
+            "Mod+1".focus-workspace = "w0";
+            "Mod+2".focus-workspace = "w1";
+            "Mod+3".focus-workspace = "w2";
+            "Mod+4".focus-workspace = "w3";
+            "Mod+5".focus-workspace = "w4";
+            "Mod+6".focus-workspace = "w5";
+            "Mod+7".focus-workspace = "w6";
+            "Mod+8".focus-workspace = "w7";
+            "Mod+9".focus-workspace = "w8";
+            "Mod+0".focus-workspace = "w9";
 
-            "Alt+Shift+1".move-column-to-workspace = "w0";
-            "Alt+Shift+2".move-column-to-workspace = "w1";
-            "Alt+Shift+3".move-column-to-workspace = "w2";
-            "Alt+Shift+4".move-column-to-workspace = "w3";
-            "Alt+Shift+5".move-column-to-workspace = "w4";
-            "Alt+Shift+6".move-column-to-workspace = "w5";
-            "Alt+Shift+7".move-column-to-workspace = "w6";
-            "Alt+Shift+8".move-column-to-workspace = "w7";
-            "Alt+Shift+9".move-column-to-workspace = "w8";
-            "Alt+Shift+0".move-column-to-workspace = "w9";
+            "Mod+Shift+1".move-column-to-workspace = "w0";
+            "Mod+Shift+2".move-column-to-workspace = "w1";
+            "Mod+Shift+3".move-column-to-workspace = "w2";
+            "Mod+Shift+4".move-column-to-workspace = "w3";
+            "Mod+Shift+5".move-column-to-workspace = "w4";
+            "Mod+Shift+6".move-column-to-workspace = "w5";
+            "Mod+Shift+7".move-column-to-workspace = "w6";
+            "Mod+Shift+8".move-column-to-workspace = "w7";
+            "Mod+Shift+9".move-column-to-workspace = "w8";
+            "Mod+Shift+0".move-column-to-workspace = "w9";
 
-            "Alt+S".spawn-sh = "noctalia-shell ipc call launcher toggle";
-            "Alt+V".spawn-sh = ''${pkgs.alsa-utils}/bin/amixer sset Capture toggle'';
+            "Mod+S".spawn-sh = "noctalia-shell ipc call launcher toggle";
+            "Mod+V".spawn-sh = ''${pkgs.alsa-utils}/bin/amixer sset Capture toggle'';
 
             "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+";
             "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
 
             # Resize windows (use bracket keys to avoid conflict with monitor focus)
-            "Alt+BracketLeft".set-column-width = "-5%";
-            "Alt+BracketRight".set-column-width = "+5%";
-            "Alt+Minus".set-window-height = "-5%";
-            "Alt+Equal".set-window-height = "+5%";
+            "Mod+BracketLeft".set-column-width = "-5%";
+            "Mod+BracketRight".set-column-width = "+5%";
+            "Mod+Minus".set-window-height = "-5%";
+            "Mod+Equal".set-window-height = "+5%";
 
             # Lock screen
-            "Alt+Super+Escape".spawn-sh = "loginctl lock-session";
-            "Alt+Ctrl+s".spawn-sh = "noctalia-shell ipc call sessionMenu lockAndSuspend";
-            "Alt+Ctrl+r".spawn-sh = "sytemctl reboot";
+            "Mod+Super+Escape".spawn-sh = "loginctl lock-session";
+            "Mod+Ctrl+s".spawn-sh = "noctalia-shell ipc call sessionMenu lockAndSuspend";
+            "Mod+Ctrl+r".spawn-sh = "sytemctl reboot";
 
-            "Alt+WheelScrollDown".focus-column-left = null;
-            "Alt+WheelScrollUp".focus-column-right = null;
-            "Alt+Ctrl+WheelScrollDown".focus-workspace-down = null;
-            "Alt+Ctrl+WheelScrollUp".focus-workspace-up = null;
+            "Mod+WheelScrollDown".focus-column-left = null;
+            "Mod+WheelScrollUp".focus-column-right = null;
+            "Mod+Ctrl+WheelScrollDown".focus-workspace-down = null;
+            "Mod+Ctrl+WheelScrollUp".focus-workspace-up = null;
 
-            # "Alt+Ctrl+S".spawn-sh = ''${getExe pkgs.grim} -l 0 - | ${pkgs.wl-clipboard}/bin/wl-copy'';
+            # "Mod+Ctrl+S".spawn-sh = ''${getExe pkgs.grim} -l 0 - | ${pkgs.wl-clipboard}/bin/wl-copy'';
 
-            "Alt+Shift+E".spawn-sh = ''${pkgs.wl-clipboard}/bin/wl-paste | ${getExe pkgs.swappy} -f -'';
+            "Mod+Shift+E".spawn-sh = ''${pkgs.wl-clipboard}/bin/wl-paste | ${getExe pkgs.swappy} -f -'';
 
-            "Alt+Shift+S".spawn-sh = getExe (pkgs.writeShellApplication {
+            "Mod+Shift+S".spawn-sh = getExe (pkgs.writeShellApplication {
               name = "screenshot";
               text = ''
                 ${getExe pkgs.grim} -g "$(${getExe pkgs.slurp} -w 0)" - \
@@ -160,7 +160,7 @@ in {
               '';
             });
 
-            "Alt+d".spawn-sh = self.mkWhichKeyExe pkgs [
+            "Mod+d".spawn-sh = self.mkWhichKeyExe pkgs [
               {
                 key = "b";
                 desc = "Bluetooth";
@@ -184,7 +184,7 @@ in {
             ];
 
               ##custom menu
-             "Alt+i".spawn-sh = self.mkWhichKeyExe pkgs [
+             "Mod+i".spawn-sh = self.mkWhichKeyExe pkgs [
               {
                 key = "b";
                 desc = "Bluetooth";

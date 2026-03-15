@@ -61,6 +61,7 @@
         pkgs.gh
         pkgs.mpv-unwrapped
         pkgs.rofi
+        pkgs.jq
 
         # wrapped
         pkgs.neovim
