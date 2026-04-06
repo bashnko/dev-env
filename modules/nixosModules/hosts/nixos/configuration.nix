@@ -110,6 +110,7 @@
       usbutils
       kicad
       kdePackages.kdeconnect-kde
+      terraform
 
       #:)
       osu-lazer

@@ -7,7 +7,6 @@ export LANG=en_US.UTF-8
 
 # export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
 # export XAUTHORITY="$XDG_CACHE_HOME/xauthority"
-eval "$(ssh-agent -s)" >/dev/null 2>&1
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -36,7 +35,6 @@ export PATH="$CARGO_HOME/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-export GTK_THEME=Arc-Dark
 export GTK3_RC_FILES="$HOME/.config/gtk-3.0/settings.ini"
 export GTK4_RC_FILES="$HOME/.config/gtk-4.0/settings.ini"
 
@@ -50,7 +48,7 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
-export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/config"
+export GIT_CONFIG_GLOBAL="${GIT_CONFIG_GLOBAL:-$XDG_CONFIG_HOME/git/config}"
 
 mkdir -p "$XDG_CACHE_HOME/zsh"
 mkdir -p "$XDG_CONFIG_HOME/zsh"

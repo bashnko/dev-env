@@ -72,10 +72,10 @@
       env = {
         EDITOR = getExe pkgs.neovim;
         GIT_CONFIG_GLOBAL = self'.packages.gitconfig;
-        GIT_AUTHOR_NAME = "bashneko";
-        GIT_AUTHOR_EMAIL = "thestraybyte@gmail.com";
-        GIT_COMMITTER_NAME = "bashneko";
-        GIT_COMMITTER_EMAIL = "thestraybyte@gmail.com";
+        GIT_AUTHOR_NAME = "bashNeko";
+        GIT_AUTHOR_EMAIL = "bashnko@users.noreply.github.com";
+        GIT_COMMITTER_NAME = "bashNeko";
+        GIT_COMMITTER_EMAIL = "bashnko@users.noreply.github.com";
 
         # Go configuration - install packages to ~/go
         GOPATH = "$HOME/go";

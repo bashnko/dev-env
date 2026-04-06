@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.base = {lib, ...}: let
+  flake.nixosModules.base = {lib, config, ...}: let
     inherit
       (lib)
       mkEnableOption
@@ -19,7 +19,7 @@
       };
 
       user = mkOption {
-        default = "username";
+        default = config.preferences.user.name;
         description = ''
           Main user
         '';

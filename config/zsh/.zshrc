@@ -1,4 +1,6 @@
-source <(fzf --zsh)
+if [[ $- == *i* ]] && (( ${+commands[fzf]} )); then
+  source <(fzf --zsh)
+fi
 ZSH_PLUGINS_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/plugins"
 DISABLE_BELL=true
 setopt prompt_subst
@@ -38,11 +40,15 @@ fi
 # load compinit once per day for speed
 autoload -Uz compinit
 () {
-  local zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
-  if [[ -n $zcompdump(#qNmh-20) ]]; then
-    compinit -C -d "$zcompdump"
+  local zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/.zcompdump"
+  mkdir -p "${zcompdump:h}"
+  if [[ -n $zcompdump(#qNmh-168) ]]; then
+    compinit -C -i -d "$zcompdump"
   else
-    compinit -d "$zcompdump"
+    compinit -i -d "$zcompdump"
+    if [[ -s "$zcompdump" ]]; then
+      zcompile "$zcompdump" 2>/dev/null
+    fi
   fi
 }
 
@@ -55,9 +61,21 @@ zstyle ':completion:*' squeeze-slashes true
 
 
 git_branch() {
+  typeset -g __prompt_git_cache_pwd __prompt_git_cache_branch
+  if [[ "$PWD" == "$__prompt_git_cache_pwd" ]]; then
+    [[ -n "$__prompt_git_cache_branch" ]] && print -r -- "$__prompt_git_cache_branch"
+    return
+  fi
+
+  __prompt_git_cache_pwd="$PWD"
   local branch
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
-  echo "%F{red} ${branch}%f"
+  branch=$(command git branch --show-current 2>/dev/null)
+  if [[ -n "$branch" ]]; then
+    __prompt_git_cache_branch="%F{red} ${branch}%f"
+    print -r -- "$__prompt_git_cache_branch"
+  else
+    __prompt_git_cache_branch=""
+  fi
 }
 
 # Nix shell indicator 
@@ -121,9 +139,21 @@ WORDCHARS=''
 bindkey '^p' up-line-or-history
 bindkey '^n' down-line-or-history
 
-autoload edit-command-line; zle -N edit-command-line
+# shift tab fix :)
+if [[ -n "${terminfo[kcbt]}" ]]; then
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete
+  if bindkey -M menuselect >/dev/null 2>&1; then
+    bindkey -M menuselect "${terminfo[kcbt]}" reverse-menu-complete
+  fi
+else
+  bindkey '^[[Z' reverse-menu-complete
+  if bindkey -M menuselect >/dev/null 2>&1; then
+    bindkey -M menuselect '^[[Z' reverse-menu-complete
+  fi
+fi
+
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M viins '^w' backward-kill-word
 
 bindkey -s '^F' 'muxify\n'
-bindkey -s '^G' 'open_git\n'
+bindkey -s '^O' 'open_git\n'
