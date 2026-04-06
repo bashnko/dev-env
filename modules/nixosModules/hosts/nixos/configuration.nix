@@ -81,6 +81,7 @@
       ghostty
       wlr-randr
       vscode
+      antigravity
       starship
       gh #github cli
       obsidian
@@ -108,6 +109,10 @@
       glibc
       usbutils
       kicad
+      kdePackages.kdeconnect-kde
+
+      #:)
+      osu-lazer
 
 
       # GPU monitoring
@@ -152,6 +157,8 @@
       pkgs.qmk-udev-rules
       pkgs.via
     ];
+    networking.firewall.allowedTCPPorts = [ 1714 1764 ];
+    networking.firewall.allowedUDPPorts = [ 1714 1764 ];
 
     # Monitor Configuration
     preferences.monitors = {

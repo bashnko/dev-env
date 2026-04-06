@@ -1,0 +1,30 @@
+warning: Git tree '/home/bash/dev-env' is dirty
+these 3 derivations will be built:
+  /nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv
+  /nix/store/yqna69037043sx62yy60kzbfqrjsjsjc-noctalia-shell.drv
+  /nix/store/ny8k1skdlaf9drx8d0p9z58paxlkh4fs-noctalia-shell.drv
+building '/nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv'...
+error: Cannot build '/nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/j4pf6v02vj9sr4l99a4njhix00hzy1gw-noctalia-shell-3.8.0
+       Last 13 log lines:
+       > Running phase: qtPreHook
+       > Running phase: unpackPhase
+       > unpacking source archive /nix/store/bv057jf3ch6q37mqkyzrrajxa5v6qb2h-source
+       > source root is source
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > no configure script, doing nothing
+       > Running phase: buildPhase
+       > no Makefile or custom buildPhase, doing nothing
+       > Running phase: glibPreInstallPhase
+       > Running phase: installPhase
+       > cp: cannot stat 'Scripts': No such file or directory
+       For full logs, run:
+         nix log /nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv
+error: Cannot build '/nix/store/ny8k1skdlaf9drx8d0p9z58paxlkh4fs-noctalia-shell.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/3qinmz2235my50bi0n4d98qz98dpa630-noctalia-shell

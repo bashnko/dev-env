@@ -9,10 +9,10 @@ if command -v colordiff &>/dev/null; then
 fi
 
 #temporary workaround
-alias vim="$HOME/.local/share/bob/nightly/bin/nvim"
-alias vi="$HOME/.local/share/bob/nightly/bin/nvim"
-alias vm="$HOME/.local/share/bob/nightly/bin/nvim"
-alias v="$HOME/.local/share/bob/nightly/bin/nvim"
+alias vim="$HOME/.local/bin/nvim-linux-x86_64/bin/nvim"
+alias vi="$HOME/.local/bin/nvim-linux-x86_64/bin/nvim"
+alias vm="$HOME/.local/bin/nvim-linux-x86_64/bin/nvim"
+alias v="$HOME/.local/bin/nvim-linux-x86_64/bin/nvim"
 
 alias ls='ls --color=auto'
 alias ll='ls -lh'

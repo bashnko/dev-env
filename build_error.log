@@ -1,0 +1,167 @@
+building the system configuration...
+warning: Git tree '/home/bash/dev-env' is dirty
+these 61 derivations will be built:
+  /nix/store/qiylwr5axyg0bjk2rgspplcslb4alrns-nvidia-x11-595.58.03-6.18.20.drv
+  /nix/store/7v99zwmk83sykscm2y9p27jcq832ar2g-graphics-drivers-32bit.drv
+  /nix/store/bf0xn29sv55w1a110y4bgw3xsbh8fvds-graphics-drivers.drv
+  /nix/store/0z6v4mdbl6l0rw6i8l32xkdxy1lm7drc-graphics-driver.conf.drv
+  /nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv
+  /nix/store/yqna69037043sx62yy60kzbfqrjsjsjc-noctalia-shell.drv
+  /nix/store/ny8k1skdlaf9drx8d0p9z58paxlkh4fs-noctalia-shell.drv
+  /nix/store/9vgdg7adhwdfarzjiqz28rxwb7bmypi4-start-noctalia-shell.drv
+  /nix/store/ys5jpzary1id95h44jhw2i97zinqfp32-dump-noctalia-shell.drv
+  /nix/store/18g457r8p2q8q0587wx6084ll5fp2g9y-noctalia-bundle.drv
+  /nix/store/v2ls8lai1620cjrxbiivs4is6jf1v2cd-nvidia-persistenced-595.58.03.drv
+  /nix/store/1f5j5nga9a4d7y25flffnrjgnjlzcsij-unit-nvidia-persistenced.service.drv
+  /nix/store/4vh9rw54la1x4y2skhwgqllwngmcd6vn-obsidian-1.12.7.drv
+  /nix/store/6bpiha39bpj1fadh75zvzy98nvf133b1-osu-lazer-2026.401.0.drv
+  /nix/store/mwsbx2lvpnyh363a3ms75l19abz8ymjg-via-3.0.0-fhsenv-rootfs.drv
+  /nix/store/dfx6k4p6mfn0gaypif33ymjb6f3bi6ly-via-3.0.0-bwrap.drv
+  /nix/store/8zj20x8r04lx9308fcsl0fm409ikll07-via-3.0.0.drv
+  /nix/store/awk8s9rrx6lvqdx47sylp3yckpi306la-config.drv
+  /nix/store/wz4cy8askrr28qd4pbkk5s6rqx40in2n-lf.drv
+  /nix/store/2bddfr59qnyywi60559bjcgb46hj4g7z-lf.drv
+  /nix/store/zsyhavxvjhsa2s17zk5dlmirhj9yhl0s-zsh.drv
+  /nix/store/5ifc277h9jk37c38j5nk2gikjbrisgnx-zsh.drv
+  /nix/store/85z2wvfs7bkamlib7fcva524sb78rgl1-zsh.drv
+  /nix/store/aqrd6l367hc3pm1x7pq3cvk2163y7z61-zsh.drv
+  /nix/store/pngk5x9iab1mnbjpd7yijpiw8bixlkdn-niri.kdl.drv
+  /nix/store/1mdd714g1jys4kx42jxkxq4nqmrw72i0-niri.drv
+  /nix/store/ff47qsw7d8i1ilxlnf5r0bf8bx11f5p7-niri.drv
+  /nix/store/h51hdn3vlh6x9l098vvny9lqb1cvgpp8-nvidia-settings-595.58.03.drv
+  /nix/store/9yfnif07zqw870rslkrpq1a4r0bihl59-system-path.drv
+  /nix/store/1fxpr4p92bmd4wy3lvlb6b4gbyby91b3-X-Restart-Triggers-polkit.drv
+  /nix/store/1jb2r9vivyc9w774mqznm6dlgr4vk8lf-system-generators.drv
+  /nix/store/xbclx48vfg7szhzrmk1pfj3q8xxhngfm-desktops.drv
+  /nix/store/6zj70iqp7bbd1j57dfbfpkhkff8k5x5s-set-environment.drv
+  /nix/store/1ng2cqz8fc4s9vzsy4p2hh3w5xx37vn8-etc-profile.drv
+  /nix/store/382h1szzm07nh0gfk0nq22ijfjcgw4w7-tmpfiles.d.drv
+  /nix/store/3hyw55p6nx86ydzxmc4hrzib39yc3465-firmware.drv
+  /nix/store/g5486xa8nz7rm0ii24a53fqj7idnrscl-dbus-1.drv
+  /nix/store/vvhd2wr793dvp8slfm4ffir4ahwpv6dh-X-Restart-Triggers-dbus.drv
+  /nix/store/3n1qjfrn63d8a8a4h3gw9iwqiq8mfhqb-unit-dbus.service.drv
+  /nix/store/49iiflj5haxp31a6cnbgrf1hd5vb4ln2-user-generators.drv
+  /nix/store/5klm9ayyf1xiqn3f77bvsl7zkw83l8mq-etc-modprobe.d-firmware.conf.drv
+  /nix/store/5xc6ih5slyy6fikphyfsa3sp7ys9wqq5-unit-polkit.service.drv
+  /nix/store/fi8b520c8kkc0lm8b3q5fgn77m7am7vy-X-Restart-Triggers-systemd-tmpfiles-resetup.drv
+  /nix/store/76yypkcm0ran4hmvgpv0m3n34mwflna8-unit-systemd-tmpfiles-resetup.service.drv
+  /nix/store/izakb82kdbxmfai6vw9zs03rzphgilaa-udev-rules.drv
+  /nix/store/ybq37203lw6bg90cjv657gw0i0g4z8jc-X-Restart-Triggers-systemd-udevd.drv
+  /nix/store/m1m47snzv20mpjnmcyv85ml3zjl7zzqw-unit-systemd-udevd.service.drv
+  /nix/store/9i1cpk865wsqyw4cm7pmkd2dxflb79c9-system-units.drv
+  /nix/store/axw2gx06hb8kyw9gd0a266z40crgxqqj-unit-dbus.service.drv
+  /nix/store/dk0hjhxcj31lzxsyzc0jyld87n8s7z2d-system-shutdown.drv
+  /nix/store/dmnynz6kyzma1d023fsym3ns8fn5d9xk-hwdb.bin.drv
+  /nix/store/j4dy3b4dayqzagi92a775920y7ww42lx-linux-6.18.20-modules-shrunk.drv
+  /nix/store/mv4j2nwmn712cdhyxrmg5577b5d3b4jv-etc-pam-environment.drv
+  /nix/store/nm65ga2xxa295ng8ywn72h01cmszzrkw-user-units.drv
+  /nix/store/p3fb7v1y6gwi4r98cbw92w6v3abzr165-etc-zshenv.drv
+  /nix/store/rm8kg3dqxlmr8sbyncwwdc29dvszbj8y-closure-info.drv
+  /nix/store/s1mw43fgbl346gpx1xd6rhnl1i06ad2j-initrd-linux-6.18.20.drv
+  /nix/store/s1bvpy2bay8mpyhlpr1iml722107l4ky-boot.json.drv
+  /nix/store/wkbwm6z1fs9cppbdf9wsza7hwkpwx731-etc.drv
+  /nix/store/zcdxd0r6kd24cwz4n5akbbfddjf0m8y5-activate.drv
+  /nix/store/v8f4jj99i96vd9arpqqhrx6c3yf9sks7-nixos-system-nixos-26.05.20260401.6201e20.drv
+these 33 paths will be fetched (241.44 MiB download, 1082.81 MiB unpacked):
+  /nix/store/8az637s9c359ffqabgysla3zllavk3bc-SDL2_image-2.8.8
+  /nix/store/7k518zhin2mfg5hgmv0acml8zjfxg51h-SDL2_mixer-2.8.1
+  /nix/store/0h31prmd6vw2s6di3mhmgxf2ik7z00z4-SDL2_ttf-2.24.0
+  /nix/store/xlli1a8m35h5kwavjajnp6nl90xmjgcx-cargo-1.94.0
+  /nix/store/q2mk8k3ck5i720j6n3pwxhkh09sb1lp0-cargo-bootstrap-1.94.0
+  /nix/store/6c4vbv785rfd7dyrg2i4ygzwf9wswms7-ctpv-1.1
+  /nix/store/1damvmgmk5nq6mvsjs489aqgivhvnfhc-electron-41.0.2
+  /nix/store/yg1w43bzi8ydx5zr1s9f9jv5cd44c34c-espeak-ng-1.52.0.1-unstable-2025-09-09
+  /nix/store/p8ir1vjmmny2mqvxm6sd2nq32cvrn3kc-ffmpeg-7.1.3-lib
+  /nix/store/7dbsj28w2vc1p8yzxc94p9sssjqiibb7-ffmpeg-8.0.1-bin
+  /nix/store/lpci6w4sbns8i4a2pb9in18cl9nwdzwa-firefox-149.0
+  /nix/store/4y0wndakcsajl6q7g6gf6zpx1g0jkrg1-gcr-4.4.0.1
+  /nix/store/ln9i1hs8v6rv57mzhgmm7d9pq7b5m6bf-ghostty-1.3.1
+  /nix/store/sf2lb971dqfwf326qddixn3yanc53nl0-gnome-desktop-44.5
+  /nix/store/fbjaanprhmffhcki6ijc6iwqhl5l4jc1-gtk4-layer-shell-1.3.0
+  /nix/store/1fag4q2sqpk4581fk2jlfx2z611gsy5x-kdeconnect-kde-25.12.3
+  /nix/store/bgry8yqwlpxsqcmh39ln3sdi1bmkjhs6-kicad-10.0.0
+  /nix/store/l5lxgdqp0j9vbw8gygsq6xanshcpz18y-libadwaita-1.8.4
+  /nix/store/jv6mjlz3rlp1h2djffyadgyyn0gga6ig-libportal-gtk4-0.9.1
+  /nix/store/2sg3vlwigch51svq9dijikxjll6c5r7g-linux-6.18.20-dev
+  /nix/store/hry64bwg7ncxz0vypv52cgn28ra2sjdy-mbrola-3.3-unstable-2024-01-29
+  /nix/store/aqlk4qipx16wjvd11aa08xf189n10xax-mesa-26.0.3
+  /nix/store/5q4qvrpa5d4bnzm9gy6iik5gmwkav9pp-nautilus-49.4
+  /nix/store/cxzwdwgy2z8rnqgzrdz33xaqb3h0gqhq-ripdrag-0.4.11
+  /nix/store/4ccsp8cd78v5mq501hxnjkkdcjk3flwm-rustc-bootstrap-wrapper-1.94.0
+  /nix/store/0xjd3nsmh0ffrwl54bagfrx9kzx1cwic-rustc-wrapper-1.94.0
+  /nix/store/cjaxqc6vmbav00y4brnsm4h9dm1s4xli-sdl2-compat-2.32.64
+  /nix/store/0czrr6wqknkc0y2x55cy4yz3hw57njkk-sdl3-3.4.2-lib
+  /nix/store/zcf2i5b3slql2zvryxb03bi078y0p7bv-speech-dispatcher-0.12.1
+  /nix/store/3rvfqwn4g23599vpl66lk533d9y3db8w-ungoogled-chromium-146.0.7680.164
+  /nix/store/wx1fr86ljgjldgw6khiahb150wrbngsz-xdg-desktop-portal-gnome-49.0
+  /nix/store/ygfc4cwkx19rfdavp66rw2xqimys2vkd-xdg-desktop-portal-gtk-1.15.3
+  /nix/store/8pj79vs5k6jp9rpb3rp92vcci0dq2vf1-zenity-4.2.1
+copying path '/nix/store/1fag4q2sqpk4581fk2jlfx2z611gsy5x-kdeconnect-kde-25.12.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/bgry8yqwlpxsqcmh39ln3sdi1bmkjhs6-kicad-10.0.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/0xjd3nsmh0ffrwl54bagfrx9kzx1cwic-rustc-wrapper-1.94.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/3rvfqwn4g23599vpl66lk533d9y3db8w-ungoogled-chromium-146.0.7680.164' from 'https://cache.nixos.org'...
+copying path '/nix/store/sf2lb971dqfwf326qddixn3yanc53nl0-gnome-desktop-44.5' from 'https://cache.nixos.org'...
+copying path '/nix/store/fbjaanprhmffhcki6ijc6iwqhl5l4jc1-gtk4-layer-shell-1.3.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/l5lxgdqp0j9vbw8gygsq6xanshcpz18y-libadwaita-1.8.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/hry64bwg7ncxz0vypv52cgn28ra2sjdy-mbrola-3.3-unstable-2024-01-29' from 'https://cache.nixos.org'...
+copying path '/nix/store/4ccsp8cd78v5mq501hxnjkkdcjk3flwm-rustc-bootstrap-wrapper-1.94.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/4y0wndakcsajl6q7g6gf6zpx1g0jkrg1-gcr-4.4.0.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/jv6mjlz3rlp1h2djffyadgyyn0gga6ig-libportal-gtk4-0.9.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/1damvmgmk5nq6mvsjs489aqgivhvnfhc-electron-41.0.2' from 'https://cache.nixos.org'...
+copying path '/nix/store/2sg3vlwigch51svq9dijikxjll6c5r7g-linux-6.18.20-dev' from 'https://cache.nixos.org'...
+copying path '/nix/store/aqlk4qipx16wjvd11aa08xf189n10xax-mesa-26.0.3' from 'https://cache.nixos.org'...
+building '/nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv'...
+copying path '/nix/store/cxzwdwgy2z8rnqgzrdz33xaqb3h0gqhq-ripdrag-0.4.11' from 'https://cache.nixos.org'...
+building '/nix/store/4vh9rw54la1x4y2skhwgqllwngmcd6vn-obsidian-1.12.7.drv'...
+copying path '/nix/store/q2mk8k3ck5i720j6n3pwxhkh09sb1lp0-cargo-bootstrap-1.94.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/yg1w43bzi8ydx5zr1s9f9jv5cd44c34c-espeak-ng-1.52.0.1-unstable-2025-09-09' from 'https://cache.nixos.org'...
+copying path '/nix/store/ygfc4cwkx19rfdavp66rw2xqimys2vkd-xdg-desktop-portal-gtk-1.15.3' from 'https://cache.nixos.org'...
+copying path '/nix/store/ln9i1hs8v6rv57mzhgmm7d9pq7b5m6bf-ghostty-1.3.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/5q4qvrpa5d4bnzm9gy6iik5gmwkav9pp-nautilus-49.4' from 'https://cache.nixos.org'...
+copying path '/nix/store/wx1fr86ljgjldgw6khiahb150wrbngsz-xdg-desktop-portal-gnome-49.0' from 'https://cache.nixos.org'...
+copying path '/nix/store/8pj79vs5k6jp9rpb3rp92vcci0dq2vf1-zenity-4.2.1' from 'https://cache.nixos.org'...
+error: Cannot build '/nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv'.
+       Reason: builder failed with exit code 1.
+       Output paths:
+         /nix/store/j4pf6v02vj9sr4l99a4njhix00hzy1gw-noctalia-shell-3.8.0
+       Last 13 log lines:
+       > Running phase: qtPreHook
+       > Running phase: unpackPhase
+       > unpacking source archive /nix/store/bv057jf3ch6q37mqkyzrrajxa5v6qb2h-source
+       > source root is source
+       > Running phase: patchPhase
+       > Running phase: updateAutotoolsGnuConfigScriptsPhase
+       > Running phase: configurePhase
+       > no configure script, doing nothing
+       > Running phase: buildPhase
+       > no Makefile or custom buildPhase, doing nothing
+       > Running phase: glibPreInstallPhase
+       > Running phase: installPhase
+       > cp: cannot stat 'Scripts': No such file or directory
+       For full logs, run:
+         nix log /nix/store/i8kycxbhxmbl8dn8j4bmkgq907bgnlyj-noctalia-shell-3.8.0.drv
+error: Cannot build '/nix/store/ny8k1skdlaf9drx8d0p9z58paxlkh4fs-noctalia-shell.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/3qinmz2235my50bi0n4d98qz98dpa630-noctalia-shell
+error: Cannot build '/nix/store/18g457r8p2q8q0587wx6084ll5fp2g9y-noctalia-bundle.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/as15qy28iwpv1gbp77asgl3jqjlzqz67-noctalia-bundle
+error: Cannot build '/nix/store/9vgdg7adhwdfarzjiqz28rxwb7bmypi4-start-noctalia-shell.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/zpbqcapl4hnnr5x7fv90rb4lfd6fqkff-start-noctalia-shell
+error: Cannot build '/nix/store/pngk5x9iab1mnbjpd7yijpiw8bixlkdn-niri.kdl.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/ijc44pn5qps3hgmajjakl5dinn00ab5m-niri.kdl
+error: Cannot build '/nix/store/9yfnif07zqw870rslkrpq1a4r0bihl59-system-path.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/69swn5fi77l2gmm7bb91las32gwvywl1-system-path
+error: Cannot build '/nix/store/v8f4jj99i96vd9arpqqhrx6c3yf9sks7-nixos-system-nixos-26.05.20260401.6201e20.drv'.
+       Reason: 1 dependency failed.
+       Output paths:
+         /nix/store/31v1yaqazfdilsy68kq1vpv4pblg1rz5-nixos-system-nixos-26.05.20260401.6201e20
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."nixos".config.system.build.toplevel'' returned non-zero exit status 1.

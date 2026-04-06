@@ -71,7 +71,7 @@ in {
           binds = {
             "Print".spawn-sh = "$HOME/dev-env/scripts/region_ss";
             "Ctrl+Print".spawn-sh = "$HOME/dev-env/scripts/niri_ss";
-            "Mod+Return".spawn = "ghostty";
+            "Mod+T".spawn = "ghostty";
 
             "Mod+B".spawn = "firefox";
 
